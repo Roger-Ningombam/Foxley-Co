@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* FOXLEY & Co Brand Colors - Old Money Luxury Palette */
+  --ivory: #f7f5f0;
+  --cream: #faf8f4;
+  --forest-green: #1e3a3a;
+  --deep-forest: #0f2424;
+  --charcoal: #2c2c2c;
+  --gold: #d4af37;
+  --warm-gold: #e6c253;
+  --muted-gold: #b8965c;
+  
+  /* Dynamic accent color - can be changed by color picker */
+  --accent-color: var(--gold);
+  
+  /* Theme Variables */
+  --background: var(--cream);
+  --foreground: var(--forest-green);
+  --card: var(--ivory);
+  --card-foreground: var(--forest-green);
+  --popover: var(--ivory);
+  --popover-foreground: var(--forest-green);
+  --primary: var(--forest-green);
+  --primary-foreground: var(--cream);
+  --secondary: var(--ivory);
+  --secondary-foreground: var(--forest-green);
+  --muted: #e8e6e0;
+  --muted-foreground: #6b7280;
+  --accent: var(--accent-color);
+  --accent-foreground: var(--cream);
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(30, 58, 58, 0.15);
+  --input: transparent;
+  --input-background: var(--ivory);
+  --switch-background: #d1d5db;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--accent-color);
+  --chart-1: var(--accent-color);
+  --chart-2: var(--forest-green);
+  --chart-3: var(--muted-gold);
+  --chart-4: var(--warm-gold);
+  --chart-5: var(--charcoal);
+  --radius: 0.5rem;
+  --sidebar: var(--ivory);
+  --sidebar-foreground: var(--forest-green);
+  --sidebar-primary: var(--forest-green);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--accent-color);
+  --sidebar-accent-foreground: var(--cream);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--accent-color);
+}
+
+.dark {
+  --background: var(--deep-forest);
+  --foreground: var(--cream);
+  --card: var(--forest-green);
+  --card-foreground: var(--cream);
+  --popover: var(--forest-green);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--forest-green);
+  --secondary: var(--charcoal);
+  --secondary-foreground: var(--cream);
+  --muted: var(--charcoal);
+  --muted-foreground: #9ca3af;
+  --accent: var(--accent-color);
+  --accent-foreground: var(--cream);
+  --destructive: #ef4444;
+  --destructive-foreground: var(--cream);
+  --border: rgba(248, 248, 244, 0.15);
+  --input: var(--charcoal);
+  --ring: var(--accent-color);
+  --sidebar: var(--forest-green);
+  --sidebar-foreground: var(--cream);
+  --sidebar-primary: var(--accent-color);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--charcoal);
+  --sidebar-accent-foreground: var(--cream);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--accent-color);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* FOXLEY & Co Custom Colors */
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-forest-green: var(--forest-green);
+  --color-deep-forest: var(--deep-forest);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--gold);
+  --color-warm-gold: var(--warm-gold);
+  --color-muted-gold: var(--muted-gold);
+  --color-accent-color: var(--accent-color);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/**
+ * FOXLEY & Co Typography System
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.875rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    h5 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    h6 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    p {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    button {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+
+    input {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Custom animations and effects */
+@layer utilities {
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(30, 58, 58, 0.1), 0 10px 10px -5px rgba(30, 58, 58, 0.04);
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  .slide-out-right {
+    animation: slideOutRight 0.3s ease-in;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
